@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<style type="text/css">
+			.path{
+				background-color: #6983aa;
+				width: 100%;
+				height: 15%;
+			}
+			img{
+				width: 47px;
+			}
+		</style>
+		<script type="text/javascript">
+		function moveClick()
+			{
+				moveNow("100px");
+
+				Start = document.getElementById('start1').value;
+				End = document.getElementById('end1').value;
+
+				ss = [Start, "200px", "300px", "400px", "500px", "600px", "700px", "800px",
+				"900px", "1000px", End ]
+				time = 1000;
+
+				ss.forEach(function(element) {
+					setTimeout(function(){
+						moveNow(element);
+					}, time);
+
+					time = time + 1000
+				});
+			}
+
+			function moveNow(destination)
+			{
+				document.getElementById("person").style.paddingLeft = destination
+			}
+		</script>
+	</head>
+	<body>
+
+		<label>Start</label><br>
+		<input id="start1" type="text" name="start1"><br>
+		<label>End</label><br>
+		<input id="end1" type="text" name="end1">
+	
+		<div id="person">
+			<img src="stickman-304969_640.jpg">
+
+		</div>
+
+		<div class="path">
+
+		</div>
+		<a href="#" onclick="moveClick()">GO</a>
+
+
+	</body>
+</html>
